@@ -1,19 +1,27 @@
 {
-  "name": "tool-type",
-  "version": "1.0.0",
+  "name": "ts-tool-type",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
   "type": "module",
+  "main": "",
+  "types": "index.d.ts",
+  "files": [
+    "src/index.d.ts"
+  ],
   "scripts": {
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "coverage": "vitest run --coverage",
+    "release": "pnpm coverage && changelogen --release && npm publish && git push --follow-tags"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
     "@vitest/ui": "^2.1.8",
+    "changelogen": "^0.5.7",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2",
     "vite": "^6.0.7",
